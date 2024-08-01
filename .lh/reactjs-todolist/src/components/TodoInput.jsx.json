@@ -1,0 +1,70 @@
+{
+    "sourceFile": "reactjs-todolist/src/components/TodoInput.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 13,
+            "patches": [
+                {
+                    "date": 1722258986946,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1722259059893,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n const { handleAddTodos } = props\r\n const [todoValue, setTodoValue] = useState('')\r\n     return (\r\n         <header>\r\n-            <p>Remember List</p>\r\n+           \r\n             <input value={todoValue} onChange={(e) => {\r\n                 setTodoValue(e. target.value)\r\n             }} placeholder=\"Enter todo...\" />\r\n             <button onClick={() =>{\r\n"
+                },
+                {
+                    "date": 1722259081960,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,8 @@\n const { handleAddTodos } = props\r\n const [todoValue, setTodoValue] = useState('')\r\n     return (\r\n         <header>\r\n-           \r\n             <input value={todoValue} onChange={(e) => {\r\n                 setTodoValue(e. target.value)\r\n             }} placeholder=\"Enter todo...\" />\r\n             <button onClick={() =>{\r\n"
+                },
+                {
+                    "date": 1722259385315,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,11 @@\n const { handleAddTodos } = props\r\n const [todoValue, setTodoValue] = useState('')\r\n     return (\r\n         <header>\r\n+            <div>\r\n+            <p>Remember List</p>\r\n+            </div>\r\n             <input value={todoValue} onChange={(e) => {\r\n                 setTodoValue(e. target.value)\r\n             }} placeholder=\"Enter todo...\" />\r\n             <button onClick={() =>{\r\n"
+                },
+                {
+                    "date": 1722259441648,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n const { handleAddTodos } = props\r\n const [todoValue, setTodoValue] = useState('')\r\n     return (\r\n         <header>\r\n-            <div>\r\n+            <div className=\"remember list\">\r\n             <p>Remember List</p>\r\n             </div>\r\n             <input value={todoValue} onChange={(e) => {\r\n                 setTodoValue(e. target.value)\r\n"
+                },
+                {
+                    "date": 1722259518993,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n const { handleAddTodos } = props\r\n const [todoValue, setTodoValue] = useState('')\r\n     return (\r\n         <header>\r\n-            <div className=\"remember list\">\r\n+            <div className=\"rememberlist\">\r\n             <p>Remember List</p>\r\n             </div>\r\n             <input value={todoValue} onChange={(e) => {\r\n                 setTodoValue(e. target.value)\r\n"
+                },
+                {
+                    "date": 1722262583185,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,19 @@\n+import { useState } from \"react\"\r\n+\r\n+export default function TodoInput(props) {\r\n+const { handleAddTodos } = props\r\n+const [todoValue, setTodoValue] = useState('')\r\n+    return (\r\n+        <header>\r\n+            <div className=\"rememberlist\">\r\n+            <p>Remember List</p>\r\n+            </div>\r\n+            <input value={todoValue} onChange={(e) => {\r\n+                setTodoValue(e. target.value)\r\n+            }} placeholder=\"Enter todo...\" />\r\n+            <button onClick={() =>{\r\n+                handleAddTodos(todoValue)\r\n+            }}>Add</button>\r\n+        </header>\r\n+    )\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1722323088565,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { useState } from \"react\"\r\n \r\n export default function TodoInput(props) {\r\n-const { handleAddTodos } = props\r\n+const { handleAddTodos, todoValue, setTodoValue } = props\r\n const [todoValue, setTodoValue] = useState('')\r\n     return (\r\n         <header>\r\n             <div className=\"rememberlist\">\r\n"
+                },
+                {
+                    "date": 1722324023380,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,38 +1,30 @@\n-import { useState } from \"react\"\r\n+import React from 'react';\r\n \r\n export default function TodoInput(props) {\r\n-const { handleAddTodos, todoValue, setTodoValue } = props\r\n-const [todoValue, setTodoValue] = useState('')\r\n-    return (\r\n-        <header>\r\n-            <div className=\"rememberlist\">\r\n-            <p>Remember List</p>\r\n-            </div>\r\n-            <input value={todoValue} onChange={(e) => {\r\n-                setTodoValue(e. target.value)\r\n-            }} placeholder=\"Enter todo...\" />\r\n-            <button onClick={() =>{\r\n-                handleAddTodos(todoValue)\r\n-            }}>Add</button>\r\n-        </header>\r\n-    )\r\n-}\n-import { useState } from \"react\"\r\n+    const { handleAddTodos, todoValue, setTodoValue } = props;\r\n \r\n-export default function TodoInput(props) {\r\n-const { handleAddTodos } = props\r\n-const [todoValue, setTodoValue] = useState('')\r\n+    const handleInputChange = (event) => {\r\n+        setTodoValue(event.target.value);\r\n+    };\r\n+\r\n+    const handleFormSubmit = (event) => {\r\n+        event.preventDefault();\r\n+        handleAddTodos();\r\n+    };\r\n+\r\n     return (\r\n         <header>\r\n             <div className=\"rememberlist\">\r\n\\ No newline at end of file\n-            <p>Remember List</p>\r\n+                <form onSubmit={handleFormSubmit}>\r\n+                    <input \r\n+                        type=\"text\" \r\n+                        value={todoValue} \r\n+                        onChange={handleInputChange} \r\n+                        placeholder=\"Add a new task\" \r\n+                    />\r\n+                    <button type=\"submit\">Add</button>\r\n+                </form>\r\n             </div>\r\n-            <input value={todoValue} onChange={(e) => {\r\n-                setTodoValue(e. target.value)\r\n-            }} placeholder=\"Enter todo...\" />\r\n-            <button onClick={() =>{\r\n-                handleAddTodos(todoValue)\r\n-            }}>Add</button>\r\n         </header>\r\n-    )\r\n-}\n+    );\r\n+}\r\n"
+                },
+                {
+                    "date": 1722324138152,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,19 @@\n+import { useState } from \"react\"\r\n+\r\n+export default function TodoInput(props) {\r\n+const { handleAddTodos, todoValue, setTodoValue } = props\r\n+const [todoValue, setTodoValue] = useState('')\r\n+    return (\r\n+        <header>\r\n+            <div className=\"rememberlist\">\r\n+            <p>Remember List</p>\r\n+            </div>\r\n+            <input value={todoValue} onChange={(e) => {\r\n+                setTodoValue(e. target.value)\r\n+            }} placeholder=\"Enter todo...\" />\r\n+            <button onClick={() =>{\r\n+                handleAddTodos(todoValue)\r\n+            }}>Add</button>\r\n+        </header>\r\n+    )\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1722326756471,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,49 +1,20 @@\n import { useState } from \"react\"\r\n \r\n export default function TodoInput(props) {\r\n-const { handleAddTodos, todoValue, setTodoValue } = props\r\n-const [todoValue, setTodoValue] = useState('')\r\n-    return (\r\n-        <header>\r\n-            <div className=\"rememberlist\">\r\n-            <p>Remember List</p>\r\n-            </div>\r\n-            <input value={todoValue} onChange={(e) => {\r\n-                setTodoValue(e. target.value)\r\n-            }} placeholder=\"Enter todo...\" />\r\n-            <button onClick={() =>{\r\n-                handleAddTodos(todoValue)\r\n-            }}>Add</button>\r\n-        </header>\r\n-    )\r\n-}\n-import React from 'react';\r\n-\r\n-export default function TodoInput(props) {\r\n-    const { handleAddTodos, todoValue, setTodoValue } = props;\r\n-\r\n-    const handleInputChange = (event) => {\r\n-        setTodoValue(event.target.value);\r\n-    };\r\n-\r\n-    const handleFormSubmit = (event) => {\r\n-        event.preventDefault();\r\n-        handleAddTodos();\r\n-    };\r\n-\r\n-    return (\r\n-        <header>\r\n-            <div className=\"rememberlist\">\r\n-                <form onSubmit={handleFormSubmit}>\r\n-                    <input \r\n-                        type=\"text\" \r\n-                        value={todoValue} \r\n-                        onChange={handleInputChange} \r\n-                        placeholder=\"Add a new task\" \r\n-                    />\r\n-                    <button type=\"submit\">Add</button>\r\n-                </form>\r\n-            </div>\r\n-        </header>\r\n-    );\r\n+    const TodoComponent = (props) => {\r\n+        const { handleAddTodos, todoValue, setTodoValue } = props;\r\n+        return (\r\n+            <header>\r\n+                <div className=\"rememberlist\">\r\n+                    <p>Remember List</p>\r\n+                </div>\r\n+                <input value={todoValue} onChange={(e) => {\r\n+                    setTodoValue(e.target.value)\r\n+                }} placeholder=\"Enter todo...\" />\r\n+                <button onClick={() => {\r\n+                    handleAddTodos(todoValue)\r\n+                }}>Add</button>\r\n+            </header>\r\n+        )\r\n+    }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1722327736597,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,19 @@\n+import { useState } from \"react\"\r\n+\r\n+export default function TodoInput(props) {\r\n+const { handleAddTodos, todoValue, setTodoValue } = props\r\n+const [todoValue, setTodoValue] = useState('')\r\n+    return (\r\n+        <header>\r\n+            <div className=\"rememberlist\">\r\n+            <p>Remember List</p>\r\n+            </div>\r\n+            <input value={todoValue} onChange={(e) => {\r\n+                setTodoValue(e. target.value)\r\n+            }} placeholder=\"Enter todo...\" />\r\n+            <button onClick={() =>{\r\n+                handleAddTodos(todoValue)\r\n+            }}>Add</button>\r\n+        </header>\r\n+    )\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1722328005210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,25 +15,5 @@\n                 handleAddTodos(todoValue)\r\n             }}>Add</button>\r\n         </header>\r\n     )\r\n-}\n-import { useState } from \"react\"\r\n-\r\n-export default function TodoInput(props) {\r\n-    const TodoComponent = (props) => {\r\n-        const { handleAddTodos, todoValue, setTodoValue } = props;\r\n-        return (\r\n-            <header>\r\n-                <div className=\"rememberlist\">\r\n-                    <p>Remember List</p>\r\n-                </div>\r\n-                <input value={todoValue} onChange={(e) => {\r\n-                    setTodoValue(e.target.value)\r\n-                }} placeholder=\"Enter todo...\" />\r\n-                <button onClick={() => {\r\n-                    handleAddTodos(todoValue)\r\n-                }}>Add</button>\r\n-            </header>\r\n-        )\r\n-    }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1722328183141,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { useState } from \"react\"\r\n \r\n export default function TodoInput(props) {\r\n const { handleAddTodos, todoValue, setTodoValue } = props\r\n-const [todoValue, setTodoValue] = useState('')\r\n+\r\n     return (\r\n         <header>\r\n             <div className=\"rememberlist\">\r\n             <p>Remember List</p>\r\n"
+                }
+            ],
+            "date": 1722258986946,
+            "name": "Commit-0",
+            "content": "import { useState } from \"react\"\r\n\r\nexport default function TodoInput(props) {\r\nconst { handleAddTodos } = props\r\nconst [todoValue, setTodoValue] = useState('')\r\n    return (\r\n        <header>\r\n            <p>Remember List</p>\r\n            <input value={todoValue} onChange={(e) => {\r\n                setTodoValue(e. target.value)\r\n            }} placeholder=\"Enter todo...\" />\r\n            <button onClick={() =>{\r\n                handleAddTodos(todoValue)\r\n            }}>Add</button>\r\n        </header>\r\n    )\r\n}"
+        }
+    ]
+}
