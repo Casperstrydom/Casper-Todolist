@@ -1,0 +1,46 @@
+{
+    "sourceFile": "reactjs-todolist/src/components/TodoList.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1722258991478,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1722262280873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,22 @@\n+import React from 'react'\r\n+import TodoCard from './TodoCard'\r\n+\r\n+export default function TodoList(props) {\r\n+  const { todos } = props\r\n+    \r\n+\r\n+    return (\r\n+        <ul className='main'>\r\n+            {todos.map((todo, todoIndex) => {\r\n+                return (\r\n+                    <TodoCard {...props} key={todoIndex}\r\n+                    index={todoIndex}>\r\n+                        <p>{todo}</p>\r\n+                    </TodoCard>\r\n+\r\n+                )\r\n+            })}\r\n+        </ul>\r\n+    )\r\n+}\r\n+\r\n"
+                },
+                {
+                    "date": 1722262590564,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,22 @@\n+import React from 'react'\r\n+import TodoCard from './TodoCard'\r\n+\r\n+export default function TodoList(props) {\r\n+  const { todos } = props\r\n+    \r\n+\r\n+    return (\r\n+        <ul className='main'>\r\n+            {todos.map((todo, todoIndex) => {\r\n+                return (\r\n+                    <TodoCard {...props} key={todoIndex}\r\n+                    index={todoIndex}>\r\n+                        <p>{todo}</p>\r\n+                    </TodoCard>\r\n+\r\n+                )\r\n+            })}\r\n+        </ul>\r\n+    )\r\n+}\r\n+\r\n"
+                },
+                {
+                    "date": 1722263103823,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,22 @@\n+import React from 'react';\r\n+import TodoCard from './TodoCard';\r\n+\r\n+export default function TodoList(props) {\r\n+  const { todos, handleDeleteTodo } = props;\r\n+\r\n+  return (\r\n+    <ul className='main'>\r\n+      {todos.map((todo, todoIndex) => {\r\n+        return (\r\n+          <TodoCard \r\n+            key={todoIndex} \r\n+            index={todoIndex} \r\n+            handleDeleteTodo={handleDeleteTodo}\r\n+          >\r\n+            <p>{todo}</p>\r\n+          </TodoCard>\r\n+        );\r\n+      })}\r\n+    </ul>\r\n+  );\r\n+}\r\n"
+                },
+                {
+                    "date": 1722264128008,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,18 +5,16 @@\n   const { todos, handleDeleteTodo } = props;\r\n \r\n   return (\r\n     <ul className='main'>\r\n-      {todos.map((todo, todoIndex) => {\r\n-        return (\r\n-          <TodoCard \r\n-            key={todoIndex} \r\n-            index={todoIndex} \r\n-            handleDeleteTodo={handleDeleteTodo}\r\n-          >\r\n-            <p>{todo}</p>\r\n-          </TodoCard>\r\n-        );\r\n-      })}\r\n+      {todos.map((todo, todoIndex) => (\r\n+        <TodoCard \r\n+          key={todoIndex} \r\n+          index={todoIndex} \r\n+          handleDeleteTodo={handleDeleteTodo}\r\n+        >\r\n+          <p>{todo}</p>\r\n+        </TodoCard>\r\n+      ))}\r\n     </ul>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1722325194127,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,23 @@\n+import React from 'react';\r\n+import TodoCard from './TodoCard';\r\n+\r\n+export default function TodoList(props) {\r\n+  const { todos, handleDeleteTodo } = props;\r\n+\r\n+  return (\r\n+    <ul className='main'>\r\n+      {todos.map((todo, todoIndex) => {\r\n+        return (\r\n+          <TodoCard {...props}\r\n+            key={todoIndex}\r\n+            index={todoIndex}\r\n+            handleDeleteTodo={handleDeleteTodo}\r\n+          >\r\n+            <p>{todo}</p>\r\n+          </TodoCard>\r\n+        )\r\n+\r\n+      })}\r\n+    </ul>\r\n+  );\r\n+}\r\n"
+                },
+                {
+                    "date": 1722327732202,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,23 @@\n+import React from 'react';\r\n+import TodoCard from './TodoCard';\r\n+\r\n+export default function TodoList(props) {\r\n+  const { todos, handleDeleteTodo } = props;\r\n+\r\n+  return (\r\n+    <ul className='main'>\r\n+      {todos.map((todo, todoIndex) => {\r\n+        return (\r\n+          <TodoCard {...props}\r\n+            key={todoIndex}\r\n+            index={todoIndex}\r\n+            handleDeleteTodo={handleDeleteTodo}\r\n+          >\r\n+            <p>{todo}</p>\r\n+          </TodoCard>\r\n+        )\r\n+\r\n+      })}\r\n+    </ul>\r\n+  );\r\n+}\r\n"
+                },
+                {
+                    "date": 1722328007962,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,112 +20,4 @@\n       })}\r\n     </ul>\r\n   );\r\n }\r\n-import React from 'react';\r\n-import TodoCard from './TodoCard';\r\n-\r\n-export default function TodoList(props) {\r\n-  const { todos, handleDeleteTodo } = props;\r\n-\r\n-  return (\r\n-    <ul className='main'>\r\n-      {todos.map((todo, todoIndex) => {\r\n-        return (\r\n-          <TodoCard {...props}\r\n-            key={todoIndex}\r\n-            index={todoIndex}\r\n-            handleDeleteTodo={handleDeleteTodo}\r\n-          >\r\n-            <p>{todo}</p>\r\n-          </TodoCard>\r\n-        )\r\n-\r\n-      })}\r\n-    </ul>\r\n-  );\r\n-}\r\n-import React from 'react';\r\n-import TodoCard from './TodoCard';\r\n-\r\n-export default function TodoList(props) {\r\n-  const { todos, handleDeleteTodo } = props;\r\n-\r\n-  return (\r\n-    <ul className='main'>\r\n-      {todos.map((todo, todoIndex) => (\r\n-        <TodoCard \r\n-          key={todoIndex} \r\n-          index={todoIndex} \r\n-          handleDeleteTodo={handleDeleteTodo}\r\n-        >\r\n-          <p>{todo}</p>\r\n-        </TodoCard>\r\n-      ))}\r\n-    </ul>\r\n-  );\r\n-}\r\n-import React from 'react'\r\n-import TodoCard from './TodoCard'\r\n-\r\n-export default function TodoList(props) {\r\n-  const { todos } = props\r\n-    \r\n-\r\n-    return (\r\n-        <ul className='main'>\r\n-            {todos.map((todo, todoIndex) => {\r\n-                return (\r\n-                    <TodoCard {...props} key={todoIndex}\r\n-                    index={todoIndex}>\r\n-                        <p>{todo}</p>\r\n-                    </TodoCard>\r\n-\r\n-                )\r\n-            })}\r\n-        </ul>\r\n-    )\r\n-}\r\n-\r\n-import React from 'react'\r\n-import TodoCard from './TodoCard'\r\n-\r\n-export default function TodoList(props) {\r\n-  const { todos } = props\r\n-    \r\n-\r\n-    return (\r\n-        <ul className='main'>\r\n-            {todos.map((todo, todoIndex) => {\r\n-                return (\r\n-                    <TodoCard {...props} key={todoIndex}\r\n-                    index={todoIndex}>\r\n-                        <p>{todo}</p>\r\n-                    </TodoCard>\r\n-\r\n-                )\r\n-            })}\r\n-        </ul>\r\n-    )\r\n-}\r\n-\r\n-import React from 'react'\r\n-import TodoCard from './TodoCard'\r\n-\r\n-export default function TodoList(props) {\r\n-  const { todos } = props\r\n-    \r\n-\r\n-    return (\r\n-        <ul className='main'>\r\n-            {todos.map((todo, todoIndex) => {\r\n-                return (\r\n-                    <TodoCard key={todoIndex}>\r\n-                        <p>{todo}</p>\r\n-                    </TodoCard>\r\n-\r\n-                )\r\n-            })}\r\n-        </ul>\r\n-    )\r\n-}\r\n-\r\n"
+                }
+            ],
+            "date": 1722258991478,
+            "name": "Commit-0",
+            "content": "import React from 'react'\r\nimport TodoCard from './TodoCard'\r\n\r\nexport default function TodoList(props) {\r\n  const { todos } = props\r\n    \r\n\r\n    return (\r\n        <ul className='main'>\r\n            {todos.map((todo, todoIndex) => {\r\n                return (\r\n                    <TodoCard key={todoIndex}>\r\n                        <p>{todo}</p>\r\n                    </TodoCard>\r\n\r\n                )\r\n            })}\r\n        </ul>\r\n    )\r\n}\r\n\r\n"
+        }
+    ]
+}
