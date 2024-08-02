@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/components/TodoInput.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1722586858778,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1722587765988,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,16 @@\n-export default function TodoInput() {\r\n+import { useState } from \"react\"\r\n+\r\n+export default function TodoInput(props) {\r\n+    const { handleAddTodos, todoValue, setTodoValue } = props\r\n     return (\r\n-        <div>\r\n-            TodoInput\r\n-        </div>\r\n+        <header>\r\n+            <input value={todoValue} onChange={(e) => {\r\n+                setTodoValue(e.target.value)\r\n+            }} placeholder=\"Enter todo...\" />\r\n+            <button onClick={() => {\r\n+                handleAddTodos(todoValue)\r\n+                setTodoValue('')\r\n+            }}>Add</button>\r\n+        </header>\r\n     )\r\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1722586858778,
+            "name": "Commit-0",
+            "content": "export default function TodoInput() {\r\n    return (\r\n        <div>\r\n            TodoInput\r\n        </div>\r\n    )\r\n}"
+        }
+    ]
+}

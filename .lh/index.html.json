@@ -1,0 +1,26 @@
+{
+    "sourceFile": "index.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1722587262202,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1722587284472,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,10 @@\n   <head>\n     <meta charset=\"UTF-8\" />\n     <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n-    <title>Vite + React</title>\n-    \n+    <title>Todo App</title>\n+\n     <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n     <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n     <link href=\"https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Press+Start+2P&display=swap\" rel=\"stylesheet\">\n \n"
+                },
+                {
+                    "date": 1722587838040,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,20 +1,24 @@\n <!doctype html>\n <html lang=\"en\">\n \n-  <head>\n-    <meta charset=\"UTF-8\" />\n-    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n-    <title>Todo App</title>\n+<head>\n+  <meta charset=\"UTF-8\" />\n+  <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n+  <title>Todo App</title>\n \n-    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n-    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n-    <link href=\"https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Press+Start+2P&display=swap\" rel=\"stylesheet\">\n+  <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n+  <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n+  <link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Press+Start+2P&display=swap\"\n+    rel=\"stylesheet\">\n+  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css\"\n+    integrity=\"sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==\"\n+    crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\" />\n+</head>\n \n-  </head>\n+<body>\n+  <div id=\"root\"></div>\n+  <script type=\"module\" src=\"/src/main.jsx\"></script>\n+</body>\n \n-  <body>\n-    <div id=\"root\"></div>\n-    <script type=\"module\" src=\"/src/main.jsx\"></script>\n-  </body>\n-</html>\n+</html>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1722587262202,
+            "name": "Commit-0",
+            "content": "<!doctype html>\n<html lang=\"en\">\n\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Vite + React</title>\n    \n    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n    <link href=\"https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Press+Start+2P&display=swap\" rel=\"stylesheet\">\n\n  </head>\n\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.jsx\"></script>\n  </body>\n</html>\n"
+        }
+    ]
+}

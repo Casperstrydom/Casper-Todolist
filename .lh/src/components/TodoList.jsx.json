@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/components/TodoList.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1722586907666,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1722587768956,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,19 @@\n+import React from 'react'\r\n+import TodoCard from './TodoCard'\r\n+\r\n+export default function TodoList(props) {\r\n+    const { todos } = props\r\n+\r\n+\r\n+    return (\r\n+        <ul className='main'>\r\n+            {todos.map((todo, todoIndex) => {\r\n+                return (\r\n+                    <TodoCard {...props} key={todoIndex} index={todoIndex}>\r\n+                        <p>{todo}</p>\r\n+                    </TodoCard>\r\n+                )\r\n+            })}\r\n+        </ul>\r\n+    )\r\n+}\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1722586907666,
+            "name": "Commit-0",
+            "content": "import React from 'react'\r\n\r\nexport default function TodoList() {\r\n  return (\r\n    <div>TodoList</div>\r\n  )\r\n}\r\n"
+        }
+    ]
+}
